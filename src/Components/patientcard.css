@@ -3,13 +3,7 @@
     width: 190px;
     height: 254px;
     perspective: 1000px;
-  }
-  
-  .title {
-    font-size: 1.5em;
-    font-weight: 900;
-    text-align: center;
-    margin: 0;
+    margin: 5rem;
   }
   
   .innerCard {
@@ -46,12 +40,12 @@
   
   .frontSide,
   .frontSide::before {
-    background: linear-gradient(43deg, rgb(65, 88, 208) 0%, rgb(200, 80, 192) 46%, rgb(255, 204, 112) 100%);
+    background-color: rgb(103, 225, 255);
   }
   
   .backSide,
   .backSide::before {
-    background-image: linear-gradient(160deg, #0093E9 0%, #80D0C7 100%);
+    background-image: linear-gradient(160deg, rgb(103, 151, 255) 0%, rgb(103, 151, 255) 100%);
   }
   
   .backSide {
@@ -77,12 +71,23 @@
     0% {
       opacity: 0.3;
     }
-  
     80% {
       opacity: 1;
     }
-  
     100% {
       opacity: 0.3;
     }
   }
+  
+  .patimg {
+    width: 60%;
+  }
+  
+  .gridContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 10%;
+  }
+  
