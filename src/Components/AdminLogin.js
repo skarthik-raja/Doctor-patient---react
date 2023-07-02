@@ -1,22 +1,22 @@
 import React from 'react';
-import './DoctorLogin.css';
+import './AdminLogin.css';
 import axios from 'axios';
 import { useState } from 'react';
 import { useRoutes } from 'react-router-dom';
 
-const DoctorLogin = () => {
-  const api_url = "https://localhost:7033/api/Login/Doctor";
+const AdminLogin = () => {
+  const api_url = "https://localhost:7033/api/Login/Admin";
 
-  const [docEmail, setEmailOrPhone] = useState('');
-  const [docpas, setPassword] = useState('');
+  const [adminName, setEmailOrPhone] = useState('');
+  const [adminPassword, setPassword] = useState('');
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
     // Create a payload object with the user input
     const payload = {
-      docEmail,
-      docpas
+        adminName,
+        adminPassword
     };
 
     console.log(payload);
@@ -42,21 +42,21 @@ const DoctorLogin = () => {
       path: '/',
       element: (
         <div>
-          <img src="https://techcrunch.com/wp-content/uploads/2020/09/GettyImages-1211152561.jpg?w=713" alt="Background" className='image' style={{ marginTop: '7%', marginLeft: '10%', width: '50%' }} />
+          <img src="https://i.pinimg.com/564x/05/65/bf/0565bfd66594324aa6e3b0396c65c4ce.jpg" alt="Background" className='image' style={{ marginTop: '1%', marginLeft: '10%', width: '50%' }} />
           <div className="container">
             <div className="form login">
-              <header>Doctor Login</header>
+              <header>Admin Login</header>
               <form>
                 <input
                   type="text"
-                  value={docEmail}
+                  value={adminName}
                   onChange={(e) => setEmailOrPhone(e.target.value)}
                   required
-                  placeholder="Enter your email"
+                  placeholder="Enter your Name"
                 />
                 <input
                   type="password"
-                  value={docpas}
+                  value={adminPassword}
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   placeholder="Enter your password"
@@ -85,4 +85,4 @@ const DoctorLogin = () => {
   return routes;
 };
 
-export default DoctorLogin;
+export default AdminLogin;
