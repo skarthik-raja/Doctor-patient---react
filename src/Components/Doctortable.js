@@ -14,7 +14,7 @@ export default function Doctortable() {
         </thead>
         <tbody>
           <tr>
-            <td>Dr. John Doe</td>
+            <td>Shivakumar</td>
             <td>Cardiology</td>
             <td>Monday-Friday</td>
           </tr>

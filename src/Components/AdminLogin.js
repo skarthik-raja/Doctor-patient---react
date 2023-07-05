@@ -1,88 +1,77 @@
-import React from 'react';
-import './AdminLogin.css';
+import React, { useState } from 'react';
 import axios from 'axios';
-import { useState } from 'react';
-import { useRoutes } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import './AdminLogin.css';
 
 const AdminLogin = () => {
-  const api_url = "https://localhost:7033/api/Login/Admin";
+  const api_url = 'https://localhost:7175/api/Token/Admin';
 
-  const [adminName, setEmailOrPhone] = useState('');
-  const [adminPassword, setPassword] = useState('');
+  const [admin_Name, setAdminName] = useState('');
+  const [admin_Password, setAdminPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    // Create a payload object with the user input
     const payload = {
-        adminName,
-        adminPassword
+      admin_Name,
+      admin_Password,
     };
-
-    console.log(payload);
 
     axios
       .post(api_url, payload, {
         headers: {
-          'Content-Type': 'application/json'
-        }
+          'Content-Type': 'application/json',
+        },
       })
       .then((response) => {
-        console.log('New item added:', response.data);
-        // Perform any necessary actions after successful POST request
+        console.log('Login successful:', response.data);
+        navigate('/navigate');
       })
       .catch((error) => {
-        console.error('Error adding new item:', error);
-        // Perform any necessary actions for error handling
+        console.error('Error during login:', error);
       });
   };
 
-  const routes = useRoutes([
-    {
-      path: '/',
-      element: (
-        <div>
-          <img src="https://i.pinimg.com/564x/05/65/bf/0565bfd66594324aa6e3b0396c65c4ce.jpg" alt="Background" className='image' style={{ marginTop: '1%', marginLeft: '10%', width: '50%' }} />
-          <div className="container">
-            <div className="form login">
-              <header>Admin Login</header>
-              <form>
-                <input
-                  type="text"
-                  value={adminName}
-                  onChange={(e) => setEmailOrPhone(e.target.value)}
-                  required
-                  placeholder="Enter your Name"
-                />
-                <input
-                  type="password"
-                  value={adminPassword}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-                  placeholder="Enter your password"
-                />
-                <a href="#">Forgot password?</a>
-                <input
-                  type="button"
-                  className="button"
-                  onClick={handleFormSubmit}
-                  value="Login"
-                />
-              </form>
-              <div className="signup">
-                <span className="signup">Don't have an account? <label htmlFor="check">Signup</label></span>
-              </div>
-            </div>
-            <div className="form registration">
-              {/* Add your registration form here */}
-            </div>
+  return (
+    <div>
+      <img
+        src="https://thumbs.dreamstime.com/z/healthcare-medicine-finance-organization-data-stethoscope-graph-plan-63116304.jpg"
+        alt="Background"
+        className="image"
+        style={{ marginTop: '1%', marginLeft: '10%', width: '50%' }}
+      />
+      <div className="container">
+        <div className="form login">
+          <header>Admin Login</header>
+          <form onSubmit={handleFormSubmit}>
+            <input
+              type="text"
+              value={admin_Name}
+              onChange={(e) => setAdminName(e.target.value)}
+              required
+              placeholder="Enter your Name"
+            />
+            <input
+              type="password"
+              value={admin_Password}
+              onChange={(e) => setAdminPassword(e.target.value)}
+              required
+              placeholder="Enter your password"
+            />
+            <a href="#">Forgot password?</a>
+            <input type="submit" className="button" value="Login" />
+          </form>
+          <div className="signup">
+            <span className="signup">
+              Don't have an account? <label htmlFor="check">Signup</label>
+            </span>
           </div>
         </div>
-      )
-    }
-  ]);
-
-  return routes;
+        <div className="form registration">{/* Add your registration form here */}</div>
+      </div>
+    </div>
+  );
 };
 
 export default AdminLogin;

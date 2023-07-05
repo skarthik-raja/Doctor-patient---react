@@ -1,0 +1,33 @@
+.carousel-container {
+    margin-top: 50px; /* Add a top margin to create a gap */
+  }
+  
+  .carousel-item img {
+    max-height: 500px; /* Adjust the maximum height of the carousel images */
+    object-fit: cover; /* Maintain aspect ratio and cover the container */
+  }
+  
+  .carousel-item.active {
+    display: flex; /* Align active carousel item in the center */
+    justify-content: center;
+  }
+  
+  .carousel-indicators {
+    bottom: 10px; /* Adjust the position of the carousel indicators */
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    top: auto; /* Adjust the position of the carousel controls */
+    bottom: 10px;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    background-color: #000; /* Change the color of the carousel control icons */
+  }
+  
+  .navbar {
+    margin-bottom: 40px; /* Add a bottom margin to the navbar */
+  }
+  

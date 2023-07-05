@@ -1,69 +1,65 @@
 .container {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  max-width: 430px;
-  width: 100%;
-  background: #fff;
-  border-radius: 7px;
-  box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
-.container .registration-form {
-  padding: 2rem;
+.registration-form {
+  background-color: #f2f2f2;
+  padding: 30px;
+  border-radius: 8px;
+  width: 400px;
 }
 
 .registration-form header {
-  font-size: 2rem;
-  font-weight: 500;
   text-align: center;
-  margin-bottom: 1.5rem;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.registration-form form {
+  display: flex;
+  flex-direction: column;
 }
 
 .registration-form input {
-  height: 60px;
-  width: 80%;
-  padding: 0 15px;
-  font-size: 17px;
-  margin-bottom: 1.3rem;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  outline: none;
-  margin-left: 5%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
 }
 
-.registration-form input:focus {
-  box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+.error-message {
+  color: red;
+  margin-bottom: 15px;
 }
 
-.registration-form input.button {
+.button {
+  background-color: #4caf50;
   color: #fff;
-  background: #009579;
-  font-size: 1.2rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  margin-top: 1.7rem;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
   cursor: pointer;
-  transition: 0.4s;
-  width: 60%;
-  margin-left: 20%;
-}
-
-.registration-form input.button:hover {
-  background: #006653;
 }
 
 .signup {
-  font-size: 17px;
+  margin-top: 20px;
   text-align: center;
 }
 
-.signup-text label {
-  color: #009579;
-  cursor: pointer;
+.signup-text {
+  font-size: 14px;
 }
 
-.signup-text label:hover {
+.signup-text .nav-link {
+  color: #4caf50;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.signup-text .nav-link:hover {
   text-decoration: underline;
 }

@@ -1,0 +1,84 @@
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  
+  .card {
+    width: 250px;
+    height: auto;
+    background-color: rgb(103, 225, 255);
+    transition: all 0.4s;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .card:hover {
+    border-radius: 15px;
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.2);
+    background-color: rgb(103, 151, 255);
+  }
+  
+  .card__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+  }
+  
+  .docimg {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+  
+  .card__title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 1rem;
+  }
+  
+  .card__description {
+    font-size: 14px;
+    margin-top: 0.5rem;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1rem;
+  }
+  
+  .button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #45a049;
+  }
+  
